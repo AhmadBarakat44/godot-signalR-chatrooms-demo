@@ -109,6 +109,7 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_top = 55.0
 offset_bottom = 597.0
 grow_horizontal = 2
 focus_mode = 2
@@ -128,6 +129,18 @@ offset_top = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Send Message"
+
+[node name="gameID" type="Label" parent="UI/INgameWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -574.5
+offset_right = 574.5
+offset_bottom = 33.0
+grow_horizontal = 2
+horizontal_alignment = 1
 
 [connection signal="pressed" from="UI/LoginWindow/Button" to="UI/LoginWindow/Button" method="_on_pressed"]
 [connection signal="pressed" from="UI/GamesWindow/Create Game Button" to="UI/LoginWindow/Button" method="_on_create_game_button_pressed"]

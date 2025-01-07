@@ -13,6 +13,7 @@ var ingame:bool
 @onready var ChatEntry = %"chat entry"
 @onready var ChatHistory = %"chat History"
 @onready var SendButton = %"Send Message Button"
+@onready var gameIDLable = %"gameID"
 
 
 func _on_pressed() -> void:
@@ -75,6 +76,7 @@ func _on_join_game_request_complete(_result, response_code, _headers, body) -> v
 	
 
 func _start_websockets():
+	gameIDLable.text = "gameID: " + currentGameID
 	websocket = WebSocketPeer.new()
 	var res = websocket.connect_to_url("ws://localhost:5054/gamechathub")
 	if res != OK:
