@@ -1,0 +1,8 @@
+{"protocol":"json","version":1}
+{"arguments":["gameID","Username"],"invocationId":"0","target":"JoinGameChat","type":1}
+{"arguments":[{
+    "Username":"drake",
+    "Message": "this is a test",
+    "Timestamp": "blah@blahpm"
+},"gameID"],"invocationId":"0","target":"SendMessagetoGroup","type":1} //the order matters
+{"arguments":["gameID"],"invocationId":"0","target":"LeaveGameChat","type":1}

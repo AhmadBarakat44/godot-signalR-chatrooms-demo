@@ -1,0 +1,39 @@
+# Godot-specific files
+.import/
+export/
+.godot/
+
+# C# compiled files
+*.csproj
+*.sln
+*.userprefs
+*.mono/
+*.pdb
+*.mdb
+*.dll
+
+# Build directories
+*/bin/
+*/obj/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.tmp
+*.bak
+*.old
+*.swp
+
+# Logs
+*.log
+
+# Godot editor settings
+.editor_settings-*
+
+# VSCode-specific files
+.vscode/
+*.code-workspace
+.editorconfig

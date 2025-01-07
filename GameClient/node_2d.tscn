@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvmsvv40kb62q"]
+
+[ext_resource type="Script" path="res://HTTPcallerTest.gd" id="1_qcpxo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LoginWindow" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI/LoginWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Join Game"
+script = ExtResource("1_qcpxo")
+
+[node name="UsernameField" type="TextEdit" parent="UI/LoginWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "Username Here"
+
+[node name="GamesWindow" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Create Game Button" type="Button" parent="UI/GamesWindow"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 87.0
+grow_horizontal = 2
+text = "Create Game"
+
+[node name="Join Game Button" type="Button" parent="UI/GamesWindow"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -121.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join Game"
+
+[node name="Game ID Text" type="TextEdit" parent="UI/GamesWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "Game ID here"
+
+[node name="INgameWindow" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="chat entry" type="TextEdit" parent="UI/INgameWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_right = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "enter chat here"
+
+[node name="chat History" type="RichTextLabel" parent="UI/INgameWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 597.0
+grow_horizontal = 2
+focus_mode = 2
+scroll_following = true
+selection_enabled = true
+
+[node name="Send Message Button" type="Button" parent="UI/INgameWindow"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Send Message"
+
+[connection signal="pressed" from="UI/LoginWindow/Button" to="UI/LoginWindow/Button" method="_on_pressed"]
+[connection signal="pressed" from="UI/GamesWindow/Create Game Button" to="UI/LoginWindow/Button" method="_on_create_game_button_pressed"]
+[connection signal="pressed" from="UI/GamesWindow/Join Game Button" to="UI/LoginWindow/Button" method="_on_join_game_button_pressed"]
+[connection signal="pressed" from="UI/INgameWindow/Send Message Button" to="UI/LoginWindow/Button" method="_on_send_message_button_pressed"]
